@@ -2,12 +2,46 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
-
+    <title>Atom</title>
+    <link rel="stylesheet" href="src/styles.css">
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <div class="container">
+      <div class="left-pane">
+        <div class="header">
+          <img src="src/assets/image.png" alt="Atom Logo" class="logo">
+          <h1>ATOM</h1>
+        </div>
+        <p class="tagline">A hackable text editor for the 21st Century</p>
+        <div class="help-links">
+          <p>For help, please visit:</p>
+          <ul>
+            <li>The <a href="#">Atom docs</a> for Guides and the API reference.</li>
+            <li>The Atom forum at <a href="#">discuss.atom.io</a>.</li>
+            <li>The <a href="#">Atom org</a>. This is where all GitHub-created Atom packages can be found.</li>
+          </ul>
+        </div>
+        <div class="note">
+          <p>Note: To help us improve Atom, we anonymously track usage metrics, such as launch time, screen size, and current version. See the <a href="#">atom/metrics</a> package for details and instructions to disable it.</p>
+        </div>
+        <div class="footer">
+          <a href="#">atom.io</a>
+          <a href="#"><img src="src/assets/discord.png" alt="Discord Logo"></a>
+        </div>
+      </div>
+      <div class="right-pane">
+        <div class="welcome-guide">
+          <h2>Get to know Atom!</h2>
+          <button><i class="icon-open"></i>Open a Project</button>
+          <button><i class="icon-package"></i>Install a Package</button>
+          <button><i class="icon-theme"></i>Choose a Theme</button>
+          <button><i class="icon-styling"></i>Customize the Styling</button>
+          <button><i class="icon-init"></i>Hack on the Init Script</button>
+          <button><i class="icon-snippet"></i>Add a Snippet</button>
+          <button><i class="icon-shortcuts"></i>Learn some Shortcuts</button>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/renderer.ts"></script>
   </body>
 </html>
