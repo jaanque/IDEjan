@@ -1,14 +1,47 @@
-/* General Body Styles */
+:root {
+  --background-color: #f4f4f9;
+  --text-color: #333;
+  --header-color: #2c3e50;
+  --subtitle-color: #8e44ad;
+  --tagline-color: #7f8c8d;
+  --button-bg-color: #ffffff;
+  --button-border-color: #bdc3c7;
+  --button-text-color: #34495e;
+  --button-hover-bg-color: #ecf0f1;
+  --button-hover-border-color: #95a5a6;
+  --link-color: #8e44ad;
+  --link-hover-color: #34495e;
+  --footer-text-color: #95a5a6;
+  --transition-speed: 0.3s;
+}
+
+[data-theme='dark'] {
+  --background-color: #2c3e50;
+  --text-color: #ecf0f1;
+  --header-color: #ffffff;
+  --subtitle-color: #9b59b6;
+  --tagline-color: #bdc3c7;
+  --button-bg-color: #34495e;
+  --button-border-color: #5d6d7e;
+  --button-text-color: #ecf0f1;
+  --button-hover-bg-color: #415b76;
+  --button-hover-border-color: #7f8c8d;
+  --link-color: #9b59b6;
+  --link-hover-color: #ecf0f1;
+  --footer-text-color: #7f8c8d;
+}
+
 body {
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   text-align: center;
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 /* Main Content Container */
@@ -23,6 +56,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 15px;
+  position: relative;
 }
 
 .logo {
@@ -35,27 +69,31 @@ h1 {
   font-size: 4em;
   font-weight: 600;
   margin: 0;
-  color: #2c3e50;
+  color: var(--header-color);
+  transition: color var(--transition-speed) ease;
 }
 
 .subtitle {
   font-size: 1.8em;
   font-weight: 300;
-  color: #8e44ad;
+  color: var(--subtitle-color);
   margin-left: 15px;
+  transition: color var(--transition-speed) ease;
 }
 
 .tagline {
   font-size: 1.2em;
   margin-bottom: 40px;
-  color: #7f8c8d;
+  color: var(--tagline-color);
+  transition: color var(--transition-speed) ease;
 }
 
 /* Welcome Guide and Action Buttons */
 .welcome-guide h3 {
   font-size: 1.5em;
   margin-bottom: 25px;
-  color: #34495e;
+  color: var(--header-color);
+  transition: color var(--transition-speed) ease;
 }
 
 .action-buttons {
@@ -66,10 +104,10 @@ h1 {
 }
 
 button {
-  background-color: #ffffff;
-  border: 1px solid #bdc3c7;
+  background-color: var(--button-bg-color);
+  border: 1px solid var(--button-border-color);
   border-radius: 6px;
-  color: #34495e;
+  color: var(--button-text-color);
   font-size: 1em;
   padding: 12px;
   cursor: pointer;
@@ -78,15 +116,16 @@ button {
 }
 
 button:hover {
-  background-color: #ecf0f1;
-  border-color: #95a5a6;
+  background-color: var(--button-hover-bg-color);
+  border-color: var(--button-hover-border-color);
 }
 
 /* Footer Links */
 .footer-links {
   margin-top: 30px;
   font-size: 0.8em;
-  color: #95a5a6;
+  color: var(--footer-text-color);
+  transition: color var(--transition-speed) ease;
 }
 
 .footer-links ul {
@@ -101,13 +140,13 @@ button:hover {
 }
 
 .footer-links a {
-  color: #8e44ad;
+  color: var(--link-color);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: #34495e;
+  color: var(--link-hover-color);
 }
 
 .social-footer {
@@ -122,4 +161,66 @@ button:hover {
   width: 20px;
   height: 20px;
   opacity: 0.7;
+}
+
+/* Theme Switcher */
+.theme-switcher {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--button-border-color);
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
