@@ -6,14 +6,28 @@
     <link rel="stylesheet" href="src/styles.css">
   </head>
   <body>
-    <div class="container">
-      <div class="left-pane">
-        <div class="header">
-          <img src="src/assets/image.png" alt="Atom Logo" class="logo">
-          <h1>ATOM</h1>
-          <h2>Broch</h2>
+    <div class="main-content">
+      <header class="header">
+        <img src="src/assets/image.png" alt="Atom Logo" class="logo">
+        <h1>ATOM</h1>
+        <h2 class="subtitle">Broch</h2>
+      </header>
+      <p class="tagline">A hackable text editor for the 21st Century</p>
+
+      <div class="welcome-guide">
+        <h3>Get to know Atom!</h3>
+        <div class="action-buttons">
+            <button><i class="icon-open"></i>Open a Project</button>
+            <button><i class="icon-package"></i>Install a Package</button>
+            <button><i class="icon-theme"></i>Choose a Theme</button>
+            <button><i class="icon-styling"></i>Customize the Styling</button>
+            <button><i class="icon-init"></i>Hack on the Init Script</button>
+            <button><i class="icon-snippet"></i>Add a Snippet</button>
+            <button><i class="icon-shortcuts"></i>Learn some Shortcuts</button>
         </div>
-        <p class="tagline">A hackable text editor for the 21st Century</p>
+      </div>
+
+      <footer class="footer-links">
         <div class="help-links">
           <p>For help, please visit:</p>
           <ul>
@@ -25,23 +39,11 @@
         <div class="note">
           <p>Note: To help us improve Atom, we anonymously track usage metrics, such as launch time, screen size, and current version. See the <a href="#">atom/metrics</a> package for details and instructions to disable it.</p>
         </div>
-        <div class="footer">
+        <div class="social-footer">
           <a href="#">atom.io</a>
           <a href="#"><img src="src/assets/discord.png" alt="Discord Logo"></a>
         </div>
-      </div>
-      <div class="right-pane">
-        <div class="welcome-guide">
-          <h2>Get to know Atom!</h2>
-          <button><i class="icon-open"></i>Open a Project</button>
-          <button><i class="icon-package"></i>Install a Package</button>
-          <button><i class="icon-theme"></i>Choose a Theme</button>
-          <button><i class="icon-styling"></i>Customize the Styling</button>
-          <button><i class="icon-init"></i>Hack on the Init Script</button>
-          <button><i class="icon-snippet"></i>Add a Snippet</button>
-          <button><i class="icon-shortcuts"></i>Learn some Shortcuts</button>
-        </div>
-      </div>
+      </footer>
     </div>
     <script type="module" src="/src/renderer.ts"></script>
   </body>
