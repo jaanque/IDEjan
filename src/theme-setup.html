@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Choose Your Theme</title>
+    <link rel="stylesheet" href="src/setup.css">
+  </head>
+  <body>
+    <div class="setup-container">
+      <h2>Choose Your Theme</h2>
+      <div class="theme-options">
+        <div class="theme-option" data-theme="light">
+          <div class="theme-preview light"></div>
+          <span>Light</span>
+        </div>
+        <div class="theme-option" data-theme="dark">
+          <div class="theme-preview dark"></div>
+          <span>Dark</span>
+        </div>
+      </div>
+      <button id="finish-btn">Finish Setup</button>
+    </div>
+    <script type="module" src="/src/theme-setup.ts"></script>
+  </body>
+</html>
